@@ -1,0 +1,5 @@
+node generate-wallet.js
+
+Address: 0xC57c93D80Fc59Ca58Ea5B7628e07dC7d1Af89926
+Private Key: 0x5ffae903630a2a4e67aa9f7d8e813b6d69291e298b632eb68ae15b67a7721705
+Mnemonic: still witness pride retire write bulb pistol duty dad rally comfort eagle
