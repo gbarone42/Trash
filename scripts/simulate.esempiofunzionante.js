@@ -4,14 +4,10 @@ require("dotenv").config();
 
 const provider = new ethers.providers.JsonRpcProvider(process.env.SEPOLIA_RPC_URL);
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-
-// 🔥 Legge l'indirizzo dal file .contract.json
-const contractData = JSON.parse(fs.readFileSync(".contract.json"));
-const contractAddress = contractData.address;
-const abi = require("../artifacts/contracts/ScoreStorage.sol/ScoreStorage.json").abi;
-const contract = new ethers.Contract(contractAddress, abi, wallet);
+const contract = new ethers.Contract(process.env.CONTRACT_ADDRESS, require("../artifacts/contracts/ScoreStorage.sol/ScoreStorage.json").abi, wallet);
 
 async function simulateMatch() {
+  // Read match data from JSON file
   const rawData = fs.readFileSync(__dirname + "/match-data.json");
   const matchData = JSON.parse(rawData);
 
@@ -26,7 +22,7 @@ async function simulateMatch() {
     await tx.wait();
     console.log("✅ Simulated match recorded on blockchain:", tx.hash);
   } catch (error) {
-    console.error("❌ Error sending match data:", error.message);
+    console.error("❌ Error sending match data:", error);
   }
 }
 

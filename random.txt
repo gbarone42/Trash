@@ -1,5 +1,69 @@
-node generate-wallet.js
 
+
+//
+node generate-wallet.js
+//
+
+
+
+//
+npx hardhat run scripts/deploy.js --network sepolia
+
+
+cosa succede:
+✅ Contract deployed at: 0x7e623337892aE01B612E27595eE8020f52Af17c8
+
+prendere quell'address e metterlo manualmente nel .env:
+CONTRACT_ADDRESS=0x7e623337892aE01B612E27595eE8020f52Af17c8
+
+Altrimenti gli script non sanno su quale contratto scrivere.
+
+//
+
+
+
+
+//to get balance do this command
+npx hardhat console --network sepolia
+
+and type this with the address of the account between " "
+
+const balance = await ethers.provider.getBalance("0x2507CBDF8e8bF14c6c286247454B831ab6b041b8");
+console.log(ethers.utils.formatEther(balance));
+//
+
+
+
+
+
+//
 Address: 0xC57c93D80Fc59Ca58Ea5B7628e07dC7d1Af89926
 Private Key: 0x5ffae903630a2a4e67aa9f7d8e813b6d69291e298b632eb68ae15b67a7721705
 Mnemonic: still witness pride retire write bulb pistol duty dad rally comfort eagle
+//
+
+
+
+//
+🚀 New Ethereum Wallet Generated:
+Address: 0x2507CBDF8e8bF14c6c286247454B831ab6b041b8
+Private Key: 0x15e896fad61b1fa34c5a9574cc68c4664e4f6b803a7aa196cf5f29e24ae94998
+Mnemonic: width business bonus moon cargo harvest van paddle space flash lazy jaguar
+//
+
+
+
+
+
+
+Account senza ETH
+//
+🚀 New Ethereum Wallet Generated:
+Address: 0xF586ed119e8c1ECb0B6B711cFcE6371C35727c9A
+Private Key: 0x578a8e249b6f71ee32061a7329f95ed269b16b3e2fbfd4cc496f80c985a01613
+Mnemonic: inspire rent ride raccoon monitor you insect balance kangaroo vault current first
+//
+
+
+
+
