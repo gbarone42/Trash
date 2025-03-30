@@ -1,32 +1,28 @@
-const { ethers } = require("ethers");
-const { Client } = require("pg");
-require("dotenv").config();
+const sqlite3 = require("sqlite3").verbose();
+const fs = require("fs");
 
-const provider = new ethers.providers.JsonRpcProvider(process.env.SEPOLIA_RPC_URL);
-const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-const contract = new ethers.Contract(process.env.CONTRACT_ADDRESS, require("../artifacts/contracts/ScoreStorage.sol/ScoreStorage.json").abi, wallet);
+const db = new sqlite3.Database("db.sqlite3"); // path al tuo db
 
-const db = new Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-});
+const query = `SELECT id_partita, id_squadra, id_punteggio FROM partite LIMIT 1;`;
 
-async function sendMatchToBlockchain(matchId) {
-  await db.connect();
-  const res = await db.query("SELECT id_partita, id_squadra_vincente, punteggio FROM matches WHERE id_partita = $1", [matchId]);
-  await db.end();
-
-  if (res.rows.length > 0) {
-    const matchData = res.rows[0];
-    const tx = await contract.setMatchResult(matchData.id_partita, matchData.id_squadra_vincente, matchData.punteggio);
-    await tx.wait();
-    console.log("✅ Match data stored on blockchain:", tx.hash);
-  } else {
-    console.log("❌ No match found.");
+db.get(query, (err, row) => {
+  if (err) {
+    console.error("❌ Error reading from DB:", err.message);
+    return;
   }
-}
 
-sendMatchToBlockchain("42");
+  if (row) {
+    const jsonData = {
+      id_partita: row.id_partita,
+      id_squadra: row.id_squadra,
+      id_punteggio: row.id_punteggio,
+    };
+
+    fs.writeFileSync(__dirname + "/match-data.json", JSON.stringify(jsonData, null, 2));
+    console.log("✅ Match data exported to match-data.json:", jsonData);
+  } else {
+    console.log("⚠️ No match data found in DB.");
+  }
+
+  db.close();
+});

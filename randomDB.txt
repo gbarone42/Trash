@@ -1,0 +1,10 @@
+sqlite3 db.sqlite3
+DROP TABLE IF EXISTS partite; /// If the table doesn't exist (if you want to recreate it), first you can delete it:
+
+
+
+CREATE TABLE partite (id_partita TEXT, id_squadra TEXT, id_punteggio TEXT);
+
+INSERT INTO partite VALUES ('partita_topolino', 'squadra_pippo', '100 - 1');
+SELECT * FROM partite;
+.quit
