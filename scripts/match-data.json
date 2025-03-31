@@ -1,37 +1,17 @@
 [
   {
-    "tournament_id": "T123",
-    "winner": "pongKing",
-    "score": "100 - 1"
-  },
-  {
-    "tournament_id": "T234",
-    "winner": "mickey",
-    "score": "80 - 2"
-  },
-  {
-    "tournament_id": "T345",
-    "winner": "donald",
-    "score": "99 - 3"
-  },
-  {
-    "tournament_id": "T456",
-    "winner": "minnie",
-    "score": "75 - 5"
-  },
-  {
-    "tournament_id": "T789",
-    "winner": "pippo",
-    "score": "70 - 6"
-  },
-  {
-    "tournament_id": "T890",
+    "tournament_id": "T9999",
     "winner": "pluto",
-    "score": "95 - 4"
+    "score": "88 - 0"
   },
   {
-    "tournament_id": "T999",
-    "winner": "paperoga",
-    "score": "88 - 7"
+    "tournament_id": "T9998",
+    "winner": "goofy",
+    "score": "55 - 4"
+  },
+  {
+    "tournament_id": "T8888",
+    "winner": "daisy",
+    "score": "60 - 7"
   }
 ]

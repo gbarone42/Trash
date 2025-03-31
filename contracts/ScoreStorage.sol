@@ -8,6 +8,7 @@ contract ScoreStorage {
     }
 
     mapping(string => Match) public matches;
+    mapping(string => bool) public isMatchRegistered;
     address public owner;
 
     constructor() {
@@ -20,7 +21,9 @@ contract ScoreStorage {
     }
 
     function setMatchResult(string memory matchId, string memory team, string memory score) public onlyOwner {
+        require(!isMatchRegistered[matchId], "Match already registered");
         matches[matchId] = Match(team, score);
+        isMatchRegistered[matchId] = true;
     }
 
     function getMatchResult(string memory matchId) public view returns (string memory, string memory) {

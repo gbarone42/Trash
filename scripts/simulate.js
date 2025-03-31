@@ -22,7 +22,7 @@ async function simulateMatch() {
         match.tournament_id,
         match.winner,
         match.score
-      );      
+      );
       await tx.wait();
       console.log(`✅ Match ${match.tournament_id} recorded: ${tx.hash}`);
     } catch (err) {
