@@ -8,3 +8,26 @@ CREATE TABLE partite (id_partita TEXT, id_squadra TEXT, id_punteggio TEXT);
 INSERT INTO partite VALUES ('partita_topolino', 'squadra_pippo', '100 - 1');
 SELECT * FROM partite;
 .quit
+
+
+
+
+
+####delete all from games
+psql -d blockchain_test
+TRUNCATE TABLE game_matchhistory;
+\q
+
+
+####check whats in gamematch
+psql -d blockchain_test
+SELECT * FROM game_matchhistory;
+
+
+###this commands adds two different game_matchhistoryINSERT INTO game_matchhistory (tournament_id, winner, score)
+VALUES 
+  ('T555', 'mickey', '99 - 4'),
+  ('T666', 'donald', '85 - 3');
+
+SELECT * FROM game_matchhistory;
+\q

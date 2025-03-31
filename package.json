@@ -8,6 +8,8 @@
 		"fetch-and-send": "npm run fetch && npm run simulate",
 		"fetch-pg": "node scripts/fetch_from_db_postgres.js",
 		"fetch-and-send-pg": "npm run fetch-pg && npm run simulate",
+		"sync-loop": "node scripts/sync_loop.js",
+		"sync": "npx hardhat run scripts/sync_matches.js --network sepolia",
 		"server": "node server/index.js",
 		"wallet": "node generate-wallet.js"
 	},
