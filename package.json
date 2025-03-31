@@ -6,6 +6,8 @@
 		"simulate": "npx hardhat run scripts/simulate.js --network sepolia",
 		"fetch": "node scripts/fetch_from_db.js",
 		"fetch-and-send": "npm run fetch && npm run simulate",
+		"fetch-pg": "node scripts/fetch_from_db_postgres.js",
+		"fetch-and-send-pg": "npm run fetch-pg && npm run simulate",
 		"server": "node server/index.js",
 		"wallet": "node generate-wallet.js"
 	},
@@ -13,7 +15,7 @@
 		"@nomicfoundation/hardhat-toolbox": "^2.0.2",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
-		"pg": "^8.9.0",
+		"pg": "^8.14.1",
 		"sqlite3": "^5.1.7"
 	},
 	"devDependencies": {
