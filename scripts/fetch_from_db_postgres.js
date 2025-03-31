@@ -15,22 +15,15 @@ async function fetchData() {
 
   try {
     const res = await client.query(
-      "SELECT tournament_id, winner, score FROM game_matchhistory LIMIT 1;"
+      "SELECT tournament_id, winner, score FROM game_matchhistory;"
     );
 
     if (res.rows.length > 0) {
-      const match = res.rows[0];
-      const jsonData = {
-        id_partita: match.tournament_id,
-        id_squadra: match.winner,
-        id_punteggio: match.score,
-      };
-
       fs.writeFileSync(
         __dirname + "/match-data.json",
-        JSON.stringify(jsonData, null, 2)
+        JSON.stringify(res.rows, null, 2)
       );
-      console.log("✅ Match data exported to match-data.json:", jsonData);
+      console.log(`✅ Exported ${res.rows.length} match(es) to match-data.json`);
     } else {
       console.log("⚠️ No match data found in DB.");
     }

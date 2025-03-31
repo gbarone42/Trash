@@ -1,32 +1,33 @@
-const { ethers } = require("ethers");
-const fs = require("fs");
 require("dotenv").config();
-
-const provider = new ethers.providers.JsonRpcProvider(process.env.SEPOLIA_RPC_URL);
-const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-
-// 🔥 Legge l'indirizzo dal file .contract.json
-const contractData = JSON.parse(fs.readFileSync(".contract.json"));
-const contractAddress = contractData.address;
-const abi = require("../artifacts/contracts/ScoreStorage.sol/ScoreStorage.json").abi;
-const contract = new ethers.Contract(contractAddress, abi, wallet);
+const fs = require("fs");
+const { ethers } = require("hardhat");
 
 async function simulateMatch() {
-  const rawData = fs.readFileSync(__dirname + "/match-data.json");
-  const matchData = JSON.parse(rawData);
+  const matchData = JSON.parse(fs.readFileSync(__dirname + "/match-data.json", "utf8"));
+
+  const [deployer] = await ethers.getSigners();
+  const contractAddress = process.env.CONTRACT_ADDRESS;
+  const contract = await ethers.getContractAt("ScoreStorage", contractAddress);
+
+  if (!Array.isArray(matchData)) {
+    console.error("❌ match-data.json is not an array");
+    return;
+  }
 
   console.log("📄 Sending match data to blockchain:", matchData);
 
-  try {
-    const tx = await contract.setMatchResult(
-      matchData.id_partita,
-      matchData.id_squadra,
-      matchData.id_punteggio
-    );
-    await tx.wait();
-    console.log("✅ Simulated match recorded on blockchain:", tx.hash);
-  } catch (error) {
-    console.error("❌ Error sending match data:", error.message);
+  for (const match of matchData) {
+    try {
+      const tx = await contract.setMatchResult(
+        match.tournament_id,
+        match.winner,
+        match.score
+      );      
+      await tx.wait();
+      console.log(`✅ Match ${match.tournament_id} recorded: ${tx.hash}`);
+    } catch (err) {
+      console.error(`❌ Error recording match ${match.tournament_id}:`, err.message);
+    }
   }
 }
 
