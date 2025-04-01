@@ -11,3 +11,27 @@ VALUES
 
 
 SELECT * FROM game_matchhistory;
+
+
+
+DROP TABLE IF EXISTS game_matchhistory;
+
+CREATE TABLE game_matchhistory (
+  tournament_id TEXT,
+  winner TEXT,
+  score TEXT
+);
+
+
+
+
+INSERT INTO game_matchhistory (tournament_id, winner, score)
+VALUES 
+  ('T1001', 'mickey', '85 - 4'),
+  ('T1002', 'donald', '90 - 3'),
+  ('T1003', 'daisy', '78 - 6'),
+  ('T1004', 'goofy', '70 - 8'),
+  ('T1005', 'minnie', '95 - 1'),
+  ('T1006', 'pluto', '88 - 7'),
+  ('T1007', 'scrooge', '99 - 0'),
+  ('T1008', 'clarabelle', '60 - 9');
