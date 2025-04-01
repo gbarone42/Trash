@@ -1,0 +1,13 @@
+psql -d blockchain_test
+
+
+
+INSERT INTO game_matchhistory (tournament_id, winner, score)
+VALUES 
+  ('T5555', 'pluto', '88 - 7'),
+  ('T6666', 'daisy', '77 - 5'),
+  ('T7777', 'donald', '99 - 2');
+
+
+
+SELECT * FROM game_matchhistory;

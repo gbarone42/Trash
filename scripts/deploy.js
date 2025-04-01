@@ -2,13 +2,13 @@ const fs = require("fs");
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-  console.log("Deploying contract with:", deployer.address);
+  console.log("🎯Deploying contract with:", deployer.address);
 
   const ScoreStorage = await ethers.getContractFactory("ScoreStorage");
   const contract = await ScoreStorage.deploy();
   await contract.deployed();
 
-  console.log("✅ Contract deployed at:", contract.address);
+  console.log("🎯Contract deployed at:", contract.address);
 
   fs.writeFileSync(
     "./.contract.json",

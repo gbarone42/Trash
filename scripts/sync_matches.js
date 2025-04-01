@@ -55,7 +55,7 @@ async function syncMatches() {
         }
       }
     }
-  }, 30000); // ogni 30 secondi
+  }, 100000); // ogni 30 secondi
 }
 
 syncMatches();
