@@ -1,0 +1,4 @@
+npm install
+npx hardhat compile
+npm run deploy
+npm run sync
