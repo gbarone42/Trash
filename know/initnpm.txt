@@ -2,3 +2,18 @@ npm install
 npx hardhat compile
 npm run deploy
 npm run sync
+
+
+
+chmod +x runblock.sh
+./runblock.sh
+./runblock.sh --clean
+tail -f runblock.log
+
+
+chmod +x clean.sh
+./clean.sh
+
+
+
+
