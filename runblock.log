@@ -1,0 +1,213 @@
+🚀 Installing dependencies...
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@5.0.15: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.1.7: Glob versions prior to v9 are no longer supported
+npm warn deprecated ethereumjs-abi@0.6.8: This library has been deprecated and usage is discouraged.
+npm warn deprecated gauge@4.0.4: This package is no longer supported.
+npm warn deprecated @nomiclabs/hardhat-etherscan@3.1.8: The @nomiclabs/hardhat-etherscan package is deprecated, please use @nomicfoundation/hardhat-verify instead
+
+added 713 packages, and audited 714 packages in 1m
+
+105 packages are looking for funding
+  run `npm fund` for details
+
+11 low severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+🔨 Compiling smart contract...
+Compiled 1 Solidity file successfully (evm target: london).
+📄 Deploying contract to Sepolia...
+
+> blockchain-score@1.0.0 deploy
+> npx hardhat run scripts/deploy.js --network sepolia
+
+🎯Deploying contract with: 0x5C16c99746717A5eC7869EA6a00E08f36d6e214E
+🎯Contract deployed at: 0x50D236b8f985dC41FF57F226Ae795BbBeC2fB04e
+🔄 Starting sync loop...
+
+> blockchain-score@1.0.0 sync
+> npx hardhat run scripts/sync_matches.js --network sepolia
+
+🚀 Syncing matches from DB every 30s...
+🔄 Checking for new matches...
+✅ Match T1001 recorded: 0x08638393d5d7cf932acf53755614d14c6f0cde4189fb6cc21f2a58f5a618b399
+✅ Match T1002 recorded: 0x80217fb4461683d3876dbca3c36ee83a05b26eca1bf5e2fc181071ec8856d402
+✅ Match T1003 recorded: 0xd2717e633637f06688ab66106f1f08c4a8debb0a88bc7efdeccd7908afc8ad12
+✅ Match T1004 recorded: 0x060c087af5e52730f0c7eb3a7705547f91eccc15f30547bd855984152f435d8c
+✅ Match T1005 recorded: 0x30dc228bfaed54361e4a5401dca0f9c90903bd75da7a517ac795201705ca55b4
+✅ Match T1006 recorded: 0x5885c0726750f2b76663c3ab1fc9771d023adf6670de5fcfe66bfcea98d8af15
+✅ Match T1007 recorded: 0xbba794642cae7c36075925bc76c72411178b8d48cac51733521e5e47a53e18c3
+✅ Match T1008 recorded: 0xd85e8e2da69ea1f760919c788b5a1895b5b6190975a193ee628b04b1c1bcd880
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+✅ Match T5555 recorded: 0x8cded5054f8515523dc7e5c7f918420303f176d5e6e46a4a8d2c6c0f616dfe73
+✅ Match T6666 recorded: 0xe5b17ddfd6e5523b92cc36bbda6985f968a7dbf031b6154b4f065214bd51ad49
+✅ Match T7777 recorded: 0x0d07398c4c9c4a50f5e9b798db0f8b9a10c8a309581a668662d7bc42db464033
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
+⚠️ Match T1001 already registered. Skipping.
+⚠️ Match T1002 already registered. Skipping.
+⚠️ Match T1003 already registered. Skipping.
+⚠️ Match T1004 already registered. Skipping.
+⚠️ Match T1005 already registered. Skipping.
+⚠️ Match T1006 already registered. Skipping.
+⚠️ Match T1007 already registered. Skipping.
+⚠️ Match T1008 already registered. Skipping.
+⚠️ Match T5555 already registered. Skipping.
+⚠️ Match T6666 already registered. Skipping.
+⚠️ Match T7777 already registered. Skipping.
+🔄 Checking for new matches...
