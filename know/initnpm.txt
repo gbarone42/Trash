@@ -5,6 +5,8 @@ npm run sync
 
 conda activate mio_ambiente
 
+psql -U barone -d blockchain_test
+
 
 chmod +x runblock.sh
 ./runblock.sh
